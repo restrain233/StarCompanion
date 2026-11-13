@@ -16,7 +16,7 @@ jobs:
 
       - uses: gradle/actions/setup-gradle@v4
         with:
-          gradle-version: '9.4.0'
+          gradle-version: '9.5.0'
 
       - name: Extract new source
         run: unzip StarCompanion_0.2.0_LocalAI.zip -d source
