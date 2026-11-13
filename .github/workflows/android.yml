@@ -1,4 +1,4 @@
-name: Build StarCompanion
+name: Build StarCompanion APK
 
 on:
   workflow_dispatch:
@@ -16,11 +16,10 @@ jobs:
 
       - uses: gradle/actions/setup-gradle@v4
         with:
-          gradle-version: '8.9'
+          gradle-version: '9.4.0'
 
-      - name: Extract source
-        run: |
-          unzip StarCompanion_BuildReady.zip -d source
+      - name: Extract new source
+        run: unzip StarCompanion_0.2.0_LocalAI.zip -d source
 
       - name: Build APK
         working-directory: source
@@ -28,5 +27,5 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: StarCompanion-APK
+          name: StarCompanion-0.2.0-APK
           path: source/app/build/outputs/apk/debug/app-debug.apk
